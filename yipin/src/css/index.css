@@ -36,6 +36,13 @@ h6 {
 	font-size: 100%;
 }
 
+body {
+	margin: 0 auto;
+	overflow-x: hidden;
+	background: #fff;
+	color: #555;
+}
+
 address,
 cite,
 dfn,
@@ -48,4 +55,39 @@ var {
 ul,
 ol {
 	list-style: none;
+}
+
+p {
+	font-size: 12px;
+}
+
+img {
+	border: 0;
+	vertical-align: bottom;
+}
+
+.wrap {
+	width: 1208px;
+	margin: 0 auto;
+}
+
+.clearfix:after {
+	content: '\20';
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.Area-hd {
+	font-size: 44px;
+	color: #0797ea;
+	text-align: center;
+	background: url(../image/hd.png) no-repeat center;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	text-decoration: none;
 }

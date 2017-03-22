@@ -1,14 +1,23 @@
 <template>
 	<div id="app" class="wrapper">
 		<v-head></v-head>
+		<v-carousel></v-carousel>
+		<v-container></v-container>
+		<v-footer></v-footer>
 	</div>
 </template>
 <script type="text/javascript">
 	import appHead from './head/head.vue'
+	import appCarousel from './carousel/carousel.vue'
+	import appContainer from './container/container.vue'
+	import appFooter from './footer/footer.vue'
 
 	export default {
 		components: {
-			'v-head': appHead
+			'v-head': appHead,
+			'v-carousel':appCarousel,
+			'v-container':appContainer,
+			'v-footer':appFooter
 		}
 	}
 </script>

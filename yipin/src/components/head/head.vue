@@ -11,9 +11,9 @@
 				<!--导航栏-->
 				<div class="nav">
 					<ul class="clearfix">
-						<li @mouseenter="headHover">
+						<li>
 							<a href="">一品印象</a>
-							<div class="sub" id="1">
+							<div class="sub">
 								<div class="subnav">
 									<div class="subnav01">
 										<h1>一品印象</h1>
@@ -27,9 +27,9 @@
 								</div>
 							</div>
 						</li>
-						<li @mouseenter="headHover">
+						<li>
 							<a href="">案例专场</a>
-							<div class="sub" id="2">
+							<div class="sub">
 								<div class="subnav">
 									<div class="subnav01">
 										<h1>案例专场</h1>
@@ -112,63 +112,12 @@
 				</div>
 			</div>
 		</div>
-		<!--轮播-->
-		<div class="banner">
-			<div class="bd">
-				<ul>
-					<li>
-						<a href="">
-							<img src="" />
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="" />
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="" />
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="" />
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="" />
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="" />
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="" />
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="wrap">
-
-			</div>
-		</div>
 	</div>
-
 </template>
 
 <script type="text/javascript">
 	export default {
-		methods: {
-			headHover: function(e) {
-				var el = e.currentTarget
-				$(el).find('.sub').css('display', 'block').siblings().find('.sub').css('display', 'none')
-			}
-		}
+
 	}
 </script>
 
@@ -183,74 +132,70 @@
 			z-index: 100;
 			background-color: #fff;
 			border-bottom: 1px solid #ccc;
-			.wrap {
-				width: 1208px;
-				margin: 0 auto;
-				.logo {
-					float: left;
-					width: 180px;
-					height: 65px;
-				}
-				.nav {
-					float: right;
-					margin-right: 1px;
-					ul {
-						overflow: hidden;
-						li {
-							float: left;
-							width: 125px;
-							text-align: center;
-							line-height: 65px;
-							font-size: 16px;
-							cursor: pointer;
+			.logo {
+				float: left;
+				width: 180px;
+				height: 65px;
+			}
+			.nav {
+				float: right;
+				margin-right: 1px;
+				ul {
+					overflow: hidden;
+					li {
+						float: left;
+						width: 125px;
+						text-align: center;
+						line-height: 65px;
+						font-size: 16px;
+						cursor: pointer;
+						&:hover {
+							background-color: #23a2eb;
+						}
+						a {
+							color: #555;
+							display: block;
+							transition-duration: 0.3s, 0.3s;
+							text-decoration: none;
 							&:hover {
-								background-color: #23a2eb;
+								color: #fff;
 							}
-							a {
-								color: #555;
-								display: block;
-								transition-duration: 0.3s, 0.3s;
-								text-decoration: none;
-								&:hover {
-									color: #fff;
-								}
-							}
-							.sub {
-								position: absolute;
-								background: url(../../image/nav.png) repeat;
-								display: none;
-								width: 100%;
-								left: 0;
-								z-index: 99;
-								.subnav {
-									width: 965px;
-									margin: 0 auto;
-									padding-left: 235px;
-									.subnav01 {
-										float: left;
-										h1 {
-											display: block;
-											line-height: 45px;
-											font-size: 18px;
-											color: #fff;
-											font-weight: normal;
-											margin-top: 3px;
-										}
+						}
+						.sub {
+							position: absolute;
+							background: url(../../image/nav.png) repeat;
+							width: 100%;
+							display: none;
+							left: 0;
+							z-index: 99;
+							.subnav {
+								width: 965px;
+								margin: 0 auto;
+								padding-left: 235px;
+								.subnav01 {
+									float: left;
+									h1 {
+										display: block;
+										line-height: 45px;
+										font-size: 18px;
+										color: #fff;
+										font-weight: normal;
+										margin-top: 3px;
 									}
 								}
-								dl {
+							}
+							dl {
+								float: left;
+								height: 45px;
+								line-height: 45px;
+								margin-left: 25px;
+								dt {
 									float: left;
-									height: 45px;
-									line-height: 45px;
-									margin-left: 25px;
-									dt {
-										float: left;
-										width: 125px;
-										color: #aeadab;
-										a {
-											color: #fff;
-											padding: 0 5px;
-										}
+									width: 125px;
+									color: #aeadab;
+									a {
+										color: #fff;
+										padding: 0 5px;
 									}
 								}
 							}
