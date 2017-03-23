@@ -28,7 +28,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="">案例专场</a>
+							<router-link to="/pattern">案例专场</router-link>
 							<div class="sub">
 								<div class="subnav">
 									<div class="subnav01">
@@ -57,7 +57,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="">虚拟现实</a>
+							<a href="">实虚拟现</a>
 						</li>
 						<li>
 							<a href="">服务范围</a>

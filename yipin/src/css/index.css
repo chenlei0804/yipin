@@ -1,93 +1,221 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-p,
-blockquote,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-pre,
-form,
-fieldset,
-legend,
-button,
-input,
-textarea,
-th,
-td {
-	margin: 0;
-	padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: 100%;
-}
-
-body {
-	margin: 0 auto;
-	overflow-x: hidden;
-	background: #fff;
-	color: #555;
-}
-
-address,
-cite,
-dfn,
-em,
-i,
-var {
-	font-style: normal;
-}
-
-ul,
-ol {
-	list-style: none;
-}
-
-p {
-	font-size: 12px;
-}
-
-img {
-	border: 0;
-	vertical-align: bottom;
-}
-
-.wrap {
-	width: 1208px;
-	margin: 0 auto;
-}
-
-.clearfix:after {
-	content: '\20';
-	display: block;
-	height: 0;
-	clear: both;
-}
-
-.Area-hd {
-	font-size: 44px;
-	color: #0797ea;
-	text-align: center;
-	background: url(../image/hd.png) no-repeat center;
-}
-
-a:link,
-a:visited,
-a:hover,
-a:active {
-	text-decoration: none;
-}
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	hr,
+	p,
+	blockquote,
+	dl,
+	dt,
+	dd,
+	ul,
+	ol,
+	li,
+	pre,
+	form,
+	fieldset,
+	legend,
+	button,
+	input,
+	textarea,
+	th,
+	td {
+		margin: 0;
+		padding: 0;
+	}
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 100%;
+	}
+	
+	body {
+		margin: 0 auto;
+		overflow-x: hidden;
+		background: #fff;
+		color: #555;
+	}
+	
+	address,
+	cite,
+	dfn,
+	em,
+	i,
+	var {
+		font-style: normal;
+	}
+	
+	ul,
+	ol {
+		list-style: none;
+	}
+	
+	p {
+		font-size: 12px;
+	}
+	
+	div {
+		display: block;
+	}
+	
+	fieldset,
+	img {
+		border: 0;
+		vertical-align: bottom;
+	}
+	
+	a {
+		color: #555;
+		transition: all 0.5s ease 0s;
+	}
+	
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font: 12px/1.5 微软雅黑, Arial, sans-serif;
+	}
+	
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 100%;
+		border: 0;
+		background: none;
+		outline: none;
+	}
+	
+	.clear {
+		display: block;
+		height: 0;
+		overflow: hidden;
+		clear: both;
+	}
+	
+	.wrap {
+		width: 1208px;
+		margin: 0 auto;
+	}
+	
+	.clearfix:after {
+		content: '\20';
+		display: block;
+		height: 0;
+		clear: both;
+	}
+	
+	.Area-hd {
+		font-size: 44px;
+		color: #0797ea;
+		text-align: center;
+		background: url(../image/hd.png) no-repeat center;
+	}
+	
+	a:link,
+	a:visited,
+	a:hover,
+	a:active {
+		text-decoration: none;
+	}
+	
+	.wrapper {
+		position: relative;
+		widows: 100%;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	
+	.container {
+		position: relative;
+	}
+	
+	.sidebar {
+		position: absolute;
+		top: -110px;
+		width: 100%;
+		height: 65px;
+		background: url(../image/vr.png) no-repeat center;
+		padding-top: 45px;
+		z-index: 9999;
+	}
+	
+	.menu {
+		float: left;
+	}
+	
+	.menu dl dt {
+		float: left;
+	}
+	
+	.menu dl dt a {
+		display: block;
+		width: 155px;
+		height: 65px;
+		line-height: 65px;
+		text-align: center;
+		font-size: 16px;
+		color: #fff;
+	}
+	
+	.leftTitle {
+		float: right;
+		height: 65px;
+	}
+	
+	.leftTitle i {
+		font-size: 28px;
+		line-height: 28px;
+		color: #fff;
+		background: url(../image/leftTitle.png) no-repeat center left;
+		padding-left: 20px;
+		margin: 5px 20px 0 0;
+	}
+	
+	.all-li01 {
+		font-size: 14px;
+		color: #00a1f7;
+		font-weight: bold;
+		background: url(../image/vrBg01.png) no-repeat left center;
+		padding-left: 40px;
+	}
+	
+	.all-current>a {
+		background: #c3ad92;
+		color: #fff;
+		border-radius: 5px;
+	}
+	.currenta {
+		background: #c3ad92;
+		color: #fff;
+		border-radius: 5px;
+	}
+	.page>span>a {
+		display: inline-block;
+		margin: 0 2px;
+		padding: 0 8px;
+		border: 1px solid #ddd;
+		background: #fff;
+		color: #333;
+		vertical-align: top;
+	}
+	
+	.current {
+		border: 1px solid #23a2eb!important;
+		background: #23a2eb!important;
+		color: #fff!important;
+	}
+	
+	.currents {
+		border: 1px solid #23a2eb!important;
+		background: #23a2eb!important;
+		color: #fff!important;
+	}

@@ -18,16 +18,16 @@
 
 	export default {
 		components: {
-			'a-area':aArea,
-			'b-area':bArea,
-			'c-area':cArea,
-			'd-area':dArea,
-			'e-area':eArea,
-			'f-area':fArea,
+			'a-area': aArea,
+			'b-area': bArea,
+			'c-area': cArea,
+			'd-area': dArea,
+			'e-area': eArea,
+			'f-area': fArea,
 		}
 	}
 </script>
 
 <style lang="less" rel="stylesheet/less">
-	
+
 </style>

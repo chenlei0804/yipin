@@ -8,22 +8,31 @@
     text-align: center;
     background: url("./../image/bg.png") repeat;
 }
-a {
+.hideShow {
+    display: none;
+}
+.showShow {
     display: block;
+}
+.opacitys {
+    opacity: 1!important;
 }
 h1 {
     color: #fff;
     font-weight: normal;
 }
 .aArea01 {
+    a {
+        display: block;
+    }
     position: relative;
     width: 1186px;
     margin: 0 auto;
     height: 651px;
     overflow: hidden;
     .box01 {
-        left: 0;
-        /*top: 390px;*/
+        //      opacity: 0;
+        //      left: 0;
         img {
             width: 589px;
             height: 390px;
@@ -44,9 +53,12 @@ h1 {
             }
         }
     }
+    .anima03 {
+        animation: myAnima03 1.5s;
+    }
     .box02 {
+        //      opacity: 0;
         left: 590px;
-        /*top: 390px;*/
         img {
             width: 265px;
             height: 195px;
@@ -67,9 +79,12 @@ h1 {
             }
         }
     }
+    .anima03 {
+        animation: myAnima03 1.5s;
+    }
     .box03 {
+        //      opacity: 0;
         right: 0;
-        /*top: 390px;*/
         img {
             width: 330px;
             height: 390px;
@@ -90,9 +105,12 @@ h1 {
             }
         }
     }
+    .anima03 {
+        animation: myAnima03 1.5s;
+    }
     .box04 {
+        //      opacity: 0;
         left: 0;
-        /*left: 294px;*/
         bottom: 0;
         img {
             width: 294px;
@@ -113,10 +131,13 @@ h1 {
                 }
             }
         }
+    }
+    .anima04 {
+        animation: myAnima04 1.5s;
     }
     .box05 {
+        //      opacity: 0;
         left: 295px;
-        /*bottom: 260px;*/
         bottom: 0;
         img {
             width: 294px;
@@ -138,10 +159,13 @@ h1 {
             }
         }
     }
+    .anima05 {
+        animation: myAnima05 1.5s;
+    }
     .box06 {
+        //      opacity: 0;
         left: 590px;
         bottom: 0;
-        /*bottom: 455px;*/
         img {
             width: 265px;
             height: 455px;
@@ -162,9 +186,12 @@ h1 {
             }
         }
     }
+    .anima06 {
+        animation: myAnima06 1.5s;
+    }
     .box07 {
+        //      opacity: 0;
         right: 0;
-        /*right: 330px;*/
         bottom: 0;
         img {
             width: 330px;
@@ -184,6 +211,59 @@ h1 {
                     height: 34px!important;
                 }
             }
+        }
+    }
+    .anima07 {
+        animation: myAnima07 1.5s;
+    }
+    @keyframes myAnima03 {
+        from {
+            top: -390px;
+            opacity: 0.7;
+        }
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+    @keyframes myAnima04 {
+        from {
+            left: -294px;
+            opacity: 0.7;
+        }
+        to {
+            left: 0;
+            opacity: 1;
+        }
+    }
+    @keyframes myAnima05 {
+        from {
+            bottom: -260px;
+            opacity: 0.7;
+        }
+        to {
+            bottom: 0;
+            opacity: 1;
+        }
+    }
+    @keyframes myAnima06 {
+        from {
+            bottom: -455px;
+            opacity: 0.7;
+        }
+        to {
+            bottom: 0;
+            opacity: 1;
+        }
+    }
+    @keyframes myAnima07 {
+        from {
+            right: -330px;
+            opacity: 0.7;
+        }
+        to {
+            right: 0;
+            opacity: 1;
         }
     }
 }

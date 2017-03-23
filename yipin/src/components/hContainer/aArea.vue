@@ -5,7 +5,7 @@
 			<div class="aArea-bd">
 				<div class="hd">
 					<ul>
-						<li v-for='(items,index) in pic' @mouseenter="mouseenter(index,$event)" :class="{'hover':index===0}">
+						<li v-for='(items,index) in pic' @mouseenter="mouseenter(index,$event)" :class="{'hover':index==0}">
 							<img :src=items.img1 class="img01" :id="items.id" />
 							<img :src=items.img2 class="img02" />
 							<span>{{items.val}}</span>
@@ -17,9 +17,9 @@
 					'合肥一品效果图有限责任公司成立于2006年，是一家专注于数字视觉表现的公司，经过十多年的创新和发展 ，目前公司拥有员工近五百人，业务覆盖国内31个省和直辖市；公司主营数字化效果表现、全景图、施工图等。'
 				</div>
 				<div class="bd">
-					<v-ecv v-if="showIndex==0" :class="{'anima':showIndex==0}"></v-ecv>
-					<v-hotv v-if="showIndex==1" :class="{'anima':showIndex==1}"></v-hotv>
-					<v-cbv v-if="showIndex==2" :class="{'anima':showIndex==2}"></v-cbv>
+					<v-ecv v-show="showIndex==0?show:!show" :class="{'anima':showIndex==0}"></v-ecv>
+					<v-hotv v-show="showIndex==1?show:!show" :class="{'anima':showIndex==1}"></v-hotv>
+					<v-cbv v-show="showIndex==2?show:!show" :class="{'anima':showIndex==2}"></v-cbv>
 				</div>
 			</div>
 		</div>
@@ -53,6 +53,7 @@
 						id: 3,
 					}],
 					showIndex: 0,
+					show:true
 				}
 			},
 			components: {
@@ -141,6 +142,7 @@
 			color: #23a2eb;
 		}
 	}
+	
 	.bd {
 		.aArea01 {
 			&.anima {
