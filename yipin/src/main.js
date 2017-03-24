@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from './components/pages/App.vue'
-import Pattern from './components/pages/pattern.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from './components/pages/App.vue';
+import Pattern from './components/pages/pattern.vue';
 
 Vue.use(VueRouter)
 

@@ -2,46 +2,63 @@
 	<div class="bArea">
 		<div class="wrap">
 			<ul class="clearfix">
-				<li class="li01">
+				<li v-for="(bAreas,index) in contents" :style="{backgroundImage: 'url('+ bAreas.bAreaBgImg +')'}" :class="{'mag':index==4}">
 					<h1>
-					<img src="../../image/bArea01-1.png" />
+					<img :src=bAreas.bAreaImg class="animated" @mouseover='mouseover' @mouseout='mouseout'/>
 					</h1>
-					<p>十周年</p>
-					<span>10 ANNIVERSARY</span>
-				</li>
-				<li class="li02">
-					<h1>
-					<img src="../../image/bArea02-1.png" />
-					</h1>
-					<p>工作室</p>
-					<span>8 STUDIO</span>
-				</li>
-				<li class="li03">
-					<h1>
-					<img src="../../image/bArea03-1.png" />
-					</h1>
-					<p>成员</p>
-					<span>500 MEMBER</span>
-				</li>
-				<li class="li04">
-					<h1>
-					<img src="../../image/bArea04-1.png" />
-					</h1>
-					<p>作品</p>
-					<span>6 MILLION WORKS</span>
-				</li>
-				<li class="li05" style="margin-right: 0;">
-					<h1>
-					<img src="../../image/bArea05-1.png" />
-					</h1>
-					<p>工作日</p>
-					<span>355 WORKING DAY</span>
+					<p>{{bAreas.bAreaP}}</p>
+					<span>{{bAreas.bAreaSpan}}</span>
 				</li>
 			</ul>
 		</div>
 	</div>
 </template>
 <script type="text/javascript">
+	export default {
+		data() {
+				return {
+					contents: [{
+						bAreaBgImg: 'static/bArea/li01.png',
+						bAreaImg: 'static/bArea/bArea01-1.png',
+						bAreaP: '十周年',
+						bAreaSpan: '10 ANNIVERSARY'
+					}, {
+						bAreaBgImg: 'static/bArea/li01.png',
+						bAreaImg: 'static/bArea/bArea01-1.png',
+						bAreaP: '十周年',
+						bAreaSpan: '10 ANNIVERSARY'
+					}, {
+						bAreaBgImg: 'static/bArea/li01.png',
+						bAreaImg: 'static/bArea/bArea01-1.png',
+						bAreaP: '十周年',
+						bAreaSpan: '10 ANNIVERSARY'
+					}, {
+						bAreaBgImg: 'static/bArea/li01.png',
+						bAreaImg: 'static/bArea/bArea01-1.png',
+						bAreaP: '十周年',
+						bAreaSpan: '10 ANNIVERSARY'
+					}, {
+						bAreaBgImg: 'static/bArea/li01.png',
+						bAreaImg: 'static/bArea/bArea01-1.png',
+						bAreaP: '十周年',
+						bAreaSpan: '10 ANNIVERSARY',
+					}]
+				}
+			},
+			methods: {
+				mouseover: function(e) {
+					console.log($(e.target).hasClass('bounce'))
+					$(e.target).addClass('bounce')
+				},
+				mouseout: function(e) {
+					if ($(e.target).hasClass('bounce') == true) {
+						setTimeout(function() {
+							$(e.target).removeClass('bounce')
+						}, 1200)
+					}
+				}
+			}
+	}
 </script>
 <style lang="less" rel="stylesheet/less">
 	.bArea {
@@ -58,7 +75,7 @@
 				height: 180px;
 				position: relative;
 				text-align: center;
-				h1{
+				h1 {
 					padding-top: 40px;
 				}
 				p {
@@ -72,21 +89,9 @@
 					color: #fff;
 				}
 			}
-			.li01 {
-				background: url(../../image/li01.png) no-repeat;
-			}
-			.li02 {
-				background: url(../../image/li02.png) no-repeat;
-			}
-			.li03 {
-				background: url(../../image/li03.png) no-repeat;
-			}
-			.li04 {
-				background: url(../../image/li04.png) no-repeat;
-			}
-			.li05 {
-				background: url(../../image/li05.png) no-repeat;
-			}
+		}
+		.mag {
+			margin-right: 0;
 		}
 	}
 </style>

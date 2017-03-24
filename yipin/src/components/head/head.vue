@@ -11,103 +11,19 @@
 				<!--导航栏-->
 				<div class="nav">
 					<ul class="clearfix">
-						<li>
-							<a href="">一品印象</a>
-							<div class="sub">
+						<li v-for="(heads,index) in headVal" @mouseenter="navShow" @mouseleave="navAnimatHide">
+							<a :href=heads.urlPath>{{heads.navContent}}</a>
+							<div class="sub navHide" style="height: 0;">
 								<div class="subnav">
 									<div class="subnav01">
-										<h1>一品印象</h1>
+										<h1>{{heads.selectContent}}</h1>
 									</div>
 									<dl>
-										<dt><a href="">企业简介</a></dt>
-										<dt><a href="">新闻动态</a></dt>
-										<dt><a href="">招贤纳士</a></dt>
-										<dt><a href="">联系我们</a></dt>
+										<dt v-for="classifys in heads.selectClassify"><a href="">{{classifys.sc}}</a></dt>
 									</dl>
 								</div>
 							</div>
 						</li>
-						<li>
-							<router-link to="/pattern">案例专场</router-link>
-							<div class="sub">
-								<div class="subnav">
-									<div class="subnav01">
-										<h1>案例专场</h1>
-									</div>
-									<dl>
-										<dt><a href="">装修效果图</a></dt>
-										<dt><a href="">工装效果图</a></dt>
-										<dt><a href="">建筑效果图</a></dt>
-									</dl>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="">VR全景</a>
-							<div class="sub">
-								<div class="subnav">
-									<div class="subnav01">
-										<h1>VR全景</h1>
-									</div>
-									<dl>
-										<dt><a href="">家装部分</a></dt>
-										<dt><a href="">工装部分</a></dt>
-									</dl>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="">实虚拟现</a>
-						</li>
-						<li>
-							<a href="">服务范围</a>
-							<div class="sub">
-								<div class="subnav">
-									<div class="subnav01">
-										<h1>服务范围</h1>
-									</div>
-									<dl>
-										<dt><a href="">服务流程</a></dt>
-										<dt><a href="">急速改图</a></dt>
-										<dt><a href="">付款方式</a></dt>
-									</dl>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="">客户保障</a>
-							<div class="sub">
-								<div class="subnav">
-									<div class="subnav01">
-										<h1>服务范围</h1>
-									</div>
-									<dl>
-										<dt><a href="">第一季</a></dt>
-										<dt><a href="">第二季</a></dt>
-										<dt><a href="">第三季</a></dt>
-									</dl>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="">一品商学院</a>
-							<div class="sub">
-								<div class="subnav">
-									<div class="subnav01">
-										<h1>服务范围</h1>
-									</div>
-									<dl>
-										<dt><a href="">在线课堂</a></dt>
-										<dt><a href="">学习视频</a></dt>
-										<dt><a href="">在线报名</a></dt>
-									</dl>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="">我的一品</a>
-						</li>
-
 					</ul>
 				</div>
 			</div>
@@ -117,7 +33,100 @@
 
 <script type="text/javascript">
 	export default {
-
+		data() {
+				return {
+					headVal: [{
+						navContent: '一品印象',
+						selectContent: '一品印象',
+						urlPath:'',
+						selectClassify: [{
+							sc: '企业简介'
+						}, {
+							sc: '新闻动态'
+						}, {
+							sc: '招贤纳士'
+						}, {
+							sc: '联系我们'
+						}]
+					}, {
+						navContent: '案例专场',
+						selectContent: '案例专场',
+						urlPath:'#/pattern',
+						selectClassify: [{
+							sc: '家装效果图'
+						}, {
+							sc: '工装效果图'
+						}, {
+							sc: '建筑效果图'
+						}]
+					}, {
+						navContent: 'VR全景',
+						selectContent: 'VR全景',
+						urlPath:'',
+						selectClassify: [{
+							sc: '家装部分'
+						}, {
+							sc: '工装部分'
+						}]
+					}, {
+						navContent: '虚拟现实',
+					}, {
+						navContent: '服务范围',
+						selectContent: '服务范围',
+						urlPath:'',
+						selectClassify: [{
+							sc: '服务流程'
+						}, {
+							sc: '急速改图'
+						}, {
+							sc: '付款方式'
+						}]
+					}, {
+						navContent: '客户保障',
+						selectContent: '客户保障',
+						urlPath:'',
+						selectClassify: [{
+							sc: '第一季'
+						}, {
+							sc: '第二季'
+						}, {
+							sc: '第三季'
+						}]
+					}, {
+						navContent: '一品商学院',
+						selectContent: '一品商学院',
+						urlPath:'',
+						selectClassify: [{
+							sc: '在线课堂'
+						}, {
+							sc: '学习视频'
+						}, {
+							sc: '在线服务'
+						}]
+					}, {
+						navContent: '我的一品',
+						urlPath:'',
+					}]
+				}
+			},
+			methods: {
+				navShow: function(e) {
+					if ($(e.target).find('h1').text() !== '') {
+						$(e.target).find('.sub').removeClass('navHide').stop().animate({
+							height: '45px'
+						}, 400)
+					}
+				},
+				navAnimatHide: function(e) {
+					if ($(e.target).find('h1').text() !== '') {
+						$(e.target).find('.sub').stop().animate({
+							height: 0
+						}, 400, function() {
+							$(e.target).find('.sub').addClass('navHide')
+						})
+					}
+				}
+			}
 	}
 </script>
 
@@ -165,7 +174,6 @@
 							position: absolute;
 							background: url(../../image/nav.png) repeat;
 							width: 100%;
-							display: none;
 							left: 0;
 							z-index: 99;
 							.subnav {
@@ -183,22 +191,25 @@
 										margin-top: 3px;
 									}
 								}
-							}
-							dl {
-								float: left;
-								height: 45px;
-								line-height: 45px;
-								margin-left: 25px;
-								dt {
+								dl {
 									float: left;
-									width: 125px;
-									color: #aeadab;
-									a {
-										color: #fff;
-										padding: 0 5px;
+									height: 45px;
+									line-height: 45px;
+									margin-left: 25px;
+									dt {
+										float: left;
+										width: 125px;
+										color: #aeadab;
+										a {
+											color: #fff;
+											padding: 0 5px;
+										}
 									}
 								}
 							}
+						}
+						.navHide {
+							display: none;
 						}
 					}
 				}

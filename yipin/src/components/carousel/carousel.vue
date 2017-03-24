@@ -9,14 +9,8 @@
 		</div>
 		<div class="wrap">
 			<div class="hd clearfix">
-				<ul class="car-ul">
-					<li :class="{'hover': shufflingId==0,'bgColor':shufflingId==0}" v-on:mouseover='mouseovera'>1</li>
-					<li :class="{'hover': shufflingId==1,'bgColor':shufflingId==1}" v-on:mouseover='mouseoverb'>2</li>
-					<li :class="{'hover': shufflingId==2,'bgColor':shufflingId==2}" v-on:mouseover='mouseoverb'>3</li>
-					<li :class="{'hover': shufflingId==3,'bgColor':shufflingId==3}" v-on:mouseover='mouseoverd'>4</li>
-					<li :class="{'hover': shufflingId==4,'bgColor':shufflingId==4}" v-on:mouseover='mouseovere'>5</li>
-					<li :class="{'hover': shufflingId==5,'bgColor':shufflingId==5}" v-on:mouseover='mouseoverf'>6</li>
-					<li :class="{'hover': shufflingId==6,'bgColor':shufflingId==6}" v-on:mouseover='mouseoverg'>7</li>
+				<ul class="car-ul" v-for="(cd,index) in shufflingData">
+					<li :class="{'bgColor':shufflingId==index}" v-on:mouseover='mouseover(index,$event)' v-on:mouseout='mouseout'>{{index}}</li>
 				</ul>
 			</div>
 		</div>
@@ -28,40 +22,34 @@
 		components: {},
 		mounted: function() {
 			var _this = this;
-			var timer = setInterval(function() {
+			_this.timer = setInterval(function() {
 				if (_this.shufflingId >= 0 && _this.shufflingId < _this.shufflingData.length - 1) {
 					_this.shufflingId = parseInt(_this.shufflingId) + 1;
 				} else if (_this.shufflingId == _this.shufflingData.length - 1) {
 					_this.shufflingId = 0;
 				}
-				//				console.log(timer)
 			}, 5000)
 		},
 		methods: {
-			mouseovera: function() {
-				this.shufflingId = 0;
+			mouseover: function(index, $event) {
+				this.shufflingId = index;
+				console.log(this.timer)
+				clearInterval(this.timer)
 			},
-			mouseoverb: function() {
-				this.shufflingId = 1;
-			},
-			mouseoverc: function() {
-				this.shufflingId = 2;
-			},
-			mouseoverd: function() {
-				this.shufflingId = 3;
-			},
-			mouseovere: function() {
-				this.shufflingId = 4;
-			},
-			mouseoverf: function() {
-				this.shufflingId = 5;
-			},
-			mouseoverg: function() {
-				this.shufflingId = 6;
+			mouseout: function() {
+				var _this = this
+				_this.timer = setInterval(function() {
+					if (_this.shufflingId >= 0 && _this.shufflingId < _this.shufflingData.length - 1) {
+						_this.shufflingId = parseInt(_this.shufflingId) + 1;
+					} else if (_this.shufflingId == _this.shufflingData.length - 1) {
+						_this.shufflingId = 0;
+					}
+				}, 5000)
 			}
 		},
 		data() {
 			return {
+				shufflingId: 0,
 				shufflingData: [{
 					href: '1',
 					url: 'static/01.jpg'
@@ -84,7 +72,7 @@
 					href: '7',
 					url: 'static/07.jpg'
 				}],
-				shufflingId: 0
+				timer: 0
 			}
 		}
 	}
