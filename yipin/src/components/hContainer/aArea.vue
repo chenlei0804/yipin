@@ -16,10 +16,10 @@
 				<div class="p">
 					'合肥一品效果图有限责任公司成立于2006年，是一家专注于数字视觉表现的公司，经过十多年的创新和发展 ，目前公司拥有员工近五百人，业务覆盖国内31个省和直辖市；公司主营数字化效果表现、全景图、施工图等。'
 				</div>
-				<div class="bd">
-					<v-ecv v-show="showIndex==0?show:!show" :class="{'anima':showIndex==0}"></v-ecv>
-					<v-hotv v-show="showIndex==1?show:!show" :class="{'anima':showIndex==1}"></v-hotv>
-					<v-cbv v-show="showIndex==2?show:!show" :class="{'anima':showIndex==2}"></v-cbv>
+				<div class="bd" id="bd">
+					<v-ecv :escrollTop="escrollTop" v-if="showIndex==0" :class="{'anima':showIndex==0}"></v-ecv>
+					<v-hotv :hscrollTop="hscrollTop" v-if="showIndex==1" :class="{'anima':showIndex==1}"></v-hotv>
+					<v-cbv :cscrollTop="cscrollTop" v-if="showIndex==2" :class="{'anima':showIndex==2}"></v-cbv>
 				</div>
 			</div>
 		</div>
@@ -31,7 +31,15 @@
 	import Hotv from './hotv/hotv.vue'
 	import Cbv from './cbv/cbv.vue'
 	export default {
-		data() {
+		created() {
+				var _this = this
+				$(window).scroll(function() {
+					if ($(this).scrollTop() >= 500) {
+						_this.allscrollTop = 1
+					}
+				})
+			},
+			data() {
 				return {
 					pic: [{
 						img1: '/static/aArea01-1.png',
@@ -53,7 +61,10 @@
 						id: 3,
 					}],
 					showIndex: 0,
-					show:true
+					escrollTop: -1,
+					hscrollTop: -1,
+					cscrollTop: -1,
+					allscrollTop: 0
 				}
 			},
 			components: {
@@ -66,13 +77,34 @@
 					if (index == 0) {
 						$(e.target).addClass('hover').siblings().removeClass('hover')
 						this.showIndex = 0
+						this.escrollTop = -1
+						this.hscrollTop = -1
+						this.cscrollTop = -1
 					} else if (index == 1) {
 						$(e.target).addClass('hover').siblings().removeClass('hover')
 						this.showIndex = 1
+						this.escrollTop = -1
+						this.hscrollTop = -1
+						this.cscrollTop = -1
 					} else if (index == 2) {
 						$(e.target).addClass('hover').siblings().removeClass('hover')
 						this.showIndex = 2
+						this.escrollTop = -1
+						this.hscrollTop = -1
+						this.cscrollTop = -1
 					}
+				}
+			},
+			watch: {
+				allscrollTop: function() {
+					if (this.showIndex == 0) {
+						this.escrollTop = 0
+					} else if (this.showIndex == 1) {
+						this.hscrollTop = 0
+					} else if (this.showIndex == 2) {
+						this.cscrollTop = 0
+					}
+					$('#bd').css('opacity', 1)
 				}
 			}
 	}
@@ -120,6 +152,9 @@
 						text-transform: uppercase;
 					}
 				}
+			}
+			.bd {
+				opacity: 0;
 			}
 		}
 		.p {

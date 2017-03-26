@@ -41,6 +41,10 @@
 		overflow-x: hidden;
 		background: #fff;
 		color: #555;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
 	}
 	
 	address,
@@ -193,11 +197,13 @@
 		color: #fff;
 		border-radius: 5px;
 	}
+	
 	.currenta {
 		background: #c3ad92;
 		color: #fff;
 		border-radius: 5px;
 	}
+	
 	.page>span>a {
 		display: inline-block;
 		margin: 0 2px;

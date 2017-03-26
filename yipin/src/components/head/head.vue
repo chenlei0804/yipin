@@ -114,14 +114,14 @@
 					if ($(e.target).find('h1').text() !== '') {
 						$(e.target).find('.sub').removeClass('navHide').stop().animate({
 							height: '45px'
-						}, 400)
+						}, 500)
 					}
 				},
 				navAnimatHide: function(e) {
 					if ($(e.target).find('h1').text() !== '') {
 						$(e.target).find('.sub').stop().animate({
 							height: 0
-						}, 400, function() {
+						}, 500, function() {
 							$(e.target).find('.sub').addClass('navHide')
 						})
 					}

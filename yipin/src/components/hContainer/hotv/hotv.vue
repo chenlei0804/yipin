@@ -1,7 +1,7 @@
 <!--工装案例-->
 <template>
 	<div class="aArea01">
-		<div class="box01 a1" v-on:mouseenter="mouseentera" v-on:mouseleave="mouseleave" :class="{'anima03':bscrollTop==0,'opacitys':bscrollTop==0}">
+		<div class="box01 a1" v-on:mouseenter="mouseentera" v-on:mouseleave="mouseleave" :class="{'anima03':hscrollTop==0,'opacitys':hscrollTop==0}">
 			<img src="../../../image/hotv/h01.jpg" />
 			<div class="a2" v-show="showa">
 				<span></span>
@@ -11,7 +11,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="box02 a1" v-on:mouseenter="mouseenterb" v-on:mouseleave="mouseleave" :class="{'anima03':bscrollTop==0,'opacitys':bscrollTop==0}">
+		<div class="box02 a1" v-on:mouseenter="mouseenterb" v-on:mouseleave="mouseleave" :class="{'anima03':hscrollTop==0,'opacitys':hscrollTop==0}">
 			<img src="../../../image/hotv/h02.jpg" />
 			<div class="a2" v-show="showb">
 				<span></span>
@@ -21,7 +21,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="box03 a1" v-on:mouseenter="mouseenterc" v-on:mouseleave="mouseleave" :class="{'anima03':bscrollTop==0,'opacitys':bscrollTop==0}">
+		<div class="box03 a1" v-on:mouseenter="mouseenterc" v-on:mouseleave="mouseleave" :class="{'anima03':hscrollTop==0,'opacitys':hscrollTop==0}">
 			<img src="../../../image/hotv/h03.jpg" />
 			<div class="a2" v-show="showc">
 				<span></span>
@@ -31,7 +31,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="box04 a1" v-on:mouseenter="mouseenterd" v-on:mouseleave="mouseleave" :class="{'anima03':bscrollTop==0,'opacitys':bscrollTop==0}">
+		<div class="box04 a1" v-on:mouseenter="mouseenterd" v-on:mouseleave="mouseleave" :class="{'anima03':hscrollTop==0,'opacitys':hscrollTop==0}">
 			<img src="../../../image/hotv/h04.jpg" />
 			<div class="a2" v-show="showd">
 				<span></span>
@@ -41,7 +41,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="box05 a1" v-on:mouseenter="mouseentere" v-on:mouseleave="mouseleave" :class="{'anima03':bscrollTop==0,'opacitys':bscrollTop==0}">
+		<div class="box05 a1" v-on:mouseenter="mouseentere" v-on:mouseleave="mouseleave" :class="{'anima03':hscrollTop==0,'opacitys':hscrollTop==0}">
 			<img src="../../../image/hotv/h05.jpg" />
 			<div class="a2" v-show="showe">
 				<span></span>
@@ -51,7 +51,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="box06 a1" v-on:mouseenter="mouseenterf" v-on:mouseleave="mouseleave" :class="{'anima03':bscrollTop==0,'opacitys':bscrollTop==0}">
+		<div class="box06 a1" v-on:mouseenter="mouseenterf" v-on:mouseleave="mouseleave" :class="{'anima03':hscrollTop==0,'opacitys':hscrollTop==0}">
 			<img src="../../../image/hotv/h06.jpg" />
 			<div class="a2" v-show="showf">
 				<span></span>
@@ -61,7 +61,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="box07 a1" v-on:mouseenter="mouseenterg" v-on:mouseleave="mouseleave" :class="{'anima03':bscrollTop==0,'opacitys':bscrollTop==0}">
+		<div class="box07 a1" v-on:mouseenter="mouseenterg" v-on:mouseleave="mouseleave" :class="{'anima03':hscrollTop==0,'opacitys':hscrollTop==0}">
 			<img src="../../../image/hotv/h07.jpg" />
 			<div class="a2" v-show="showg">
 				<span></span>
@@ -76,15 +76,6 @@
 
 <script type="text/javascript">
 	export default {
-		created() {
-				var _this = this
-				$(window).scroll(function() {
-					console.log($(this).scrollTop())
-					if ($(this).scrollTop() >= 500) {
-						_this.bscrollTop = 0
-					}
-				})
-			},
 			data() {
 				return {
 					showa: false,
@@ -94,9 +85,10 @@
 					showe: false,
 					showf: false,
 					showg: false,
-					bscrollTop:1
+					hscrollTop:this.hscrollTop
 				}
 			},
+			props:['hscrollTop'],
 			methods: {
 				mouseentera: function() {
 					this.showa = true
